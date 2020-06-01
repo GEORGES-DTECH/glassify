@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col" style="color: gold;">No</th>
+                <th scope="col" style="color: gold;">Collection date</th>
+                <th scope="col" style="color: gold;">Patients name</th>
+                <th scope="col" style="color: gold;">Total amount</th>
+                <th scope="col" style="color: gold;">Deposit</th>
+                <th scope="col" style="color: gold;">Balance</th>
+                <th scope="col" style="color: gold;">Insurance</th>
+                <th scope="col" style="color: gold;">Employee</th>
+                 <th scope="col" style="color: gold;">Income</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{payment.id}}</th>
+                <td>{{payment.collection_date}}</td>
+                <td>{{payment.patient_name}}</td>
+                <td>{{payment.Total_amount}}</td>
+                <td>{{payment.Deposit}}</td>
+                <td>{{payment.balance_amount}}</td>
+                <td>{{payment.Insurance}}</td>
+                <td>{{payment.author}}</td>
+                 <td>{{payment.income}}</td>
+                
+            </tr>
+
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'payment_update' payment.id%}">Update payment data</a>
+<br>
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'payment_delete' payment.id%}">Delete payment data</a>
+
+{%endblock content%}
+
+
+
+
+
+
+
+
+
+
+
+

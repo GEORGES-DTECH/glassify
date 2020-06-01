@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Glassify </title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body style="background: floralwhite">
+
+    <header>
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+
+
+
+               {%if user.is_authenticated%}
+                <a class="navbar-brand" href="{% url 'patient_home' %}">
+                    <img src="{% static 'g.ico '%}" height="30" width="30" class="d-inline-block-alighn-top" />
+                {%endif%}
+                    <b>Glassify</b>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+
+                        {% if user.is_authenticated %}
+
+                        
+
+                        <a class="nav-item nav-link" href="{% url 'patient_home' %}" style="color: gold">Patient details</a>
+                           
+                        <a class="nav-item nav-link" href="{%url 'payment_home'%}" style="color: gold">Payment details</a>
+                        <a class="nav-item nav-link" href="{%url 'patient_create'%}" style="color: gold">Add patients</a>
+                           
+                       
+
+                        <a class="nav-item nav-link" href="{%url 'payment_create'%}" style="color: gold">Add payments</a>
+                          
+                       
+
+                        <a class="nav-item nav-link" href="{% url 'logout'%}" style="color: gold">Logout</a>
+
+
+                        {% else %}
+                        <a class="nav-item nav-link" href="{% url 'login'%}" style="color: gold">Patient details</a>
+                  
+                        
+                            
+                        <a class="nav-item nav-link" href="{% url 'login'%}" style="color: gold">Payment details</a>
+                        <a class="nav-item nav-link" href="{% url 'login'%}" style="color: gold">Add patients</a>
+
+                        <a class="nav-item nav-link" href="{% url 'login'%}" style="color: gold">Add payments</a>
+                           
+                        
+                        <a class="nav-item nav-link" href="{% url 'signup' %}" style="color: gold " style="text-decoration: ;">Sign up</a>
+                        <a class="nav-item nav-link" href="{% url 'login'%}" style="color: gold">Login</a>
+
+
+
+
+                        {% endif %}
+
+                    </div>
+                </div>
+
+
+
+            </nav>
+        </div>
+
+
+
+    </header>
+
+ <div class="container ">
+    {%if messages%}
+    {%for message in messages%}
+
+    <div class="alert alert-{{message.tags}}">
+      {{message}}
+    </div>
+
+
+    {%endfor%}
+
+
+
+    {%endif%}
+
+    {% block content %}
+    
+
+    {% endblock content %}
+
+  </div>
+
+
+  <footer class="text-muted">
+    <div class="container text-center">
+      <p><h2 style="color: blue;">© Glassify Patient Details {% now "Y" %}</h2></p>
+     
+      
+      </div>
+  </footer>
+
+
+
+
+
+<!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+  
+
+
+</body>
+
+</html>

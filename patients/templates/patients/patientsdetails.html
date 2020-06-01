@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col" style="color: gold;">No</th>
+                <th scope="col" style="color: gold;">Date</th>
+                <th scope="col"style="color: gold;">Patients name</th>
+                <th scope="col"style="color: gold;">phone number</th>
+                <th scope="col"style="color: gold;">Age</th>
+                <th scope="col"style="color: gold;">Right eye</th>
+                <th scope="col"style="color: gold;">Left eye</th>
+                <th scope="col"style="color: gold;">Frame</th>
+                <th scope="col"style="color: gold;">Lenses</th>
+                <th scope="col"style="color: gold;">Employee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{patient.id}}</th>
+                <td>{{patient.Date}}</td>
+                <td>{{patient.patients_name}}</td>
+                <td>{{patient.patients_mobile}}</td>
+                <td>{{patient.patients_age}}</td>
+                <td>{{patient.Right_eye}}</td>
+                <td>{{patient.Left_eye}}</td>
+                <td>{{patient.frame}}</td>
+                <td>{{patient.lenses}}</td>
+                <td>{{patient.author}}</td>
+            </tr>
+
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'patient_update' patient.id%}">Update patient data</a>
+<br>
+<br>
+<a class="btn btn-primary " type="button" href="{%url 'patient_delete' patient.id%}">Delete patient data</a>
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock content%}
