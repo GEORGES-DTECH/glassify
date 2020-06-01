@@ -1,0 +1,1 @@
+web: gunicorn glassify.wsgi --log-file -
