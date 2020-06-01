@@ -25,7 +25,7 @@ SECRET_KEY = '8z97#5qte5=lrg_k&sau#v+6$-zt6_!g@bq^n72w2@ka1m!u&('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['glassfy.herokuapp.com','127.0.0.1']
 
 
 # Application definition
